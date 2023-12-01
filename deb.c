@@ -20,10 +20,13 @@ i32 debDumpDbn(i32 dbn, i32 size) {
   printf("\n");
   if (size == 1) {
     for (int i = 0; i < BYTESPERBLOCK; ++i) {
+      //printf("Address: %d ", i);
       printf("%02x ", buf8[i]);
       if ((i + 1) % 16 == 0) {
-        for (int i = 0; i < 16; ++i) {
-          char c = buf8[i];
+        //printf("Address: %d \n", i);
+        for (int j = i -15; j < i; ++j) {
+          
+          char c = buf8[j];
           if (!isprint(c)) c = '.';
           printf("%c", c);
         }
